@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="events.js"></script>
+    <title>Events</title>
+</head>
+
+<body class="w-screen h-screen  overflow-x-hidden">
+    <div class="h-auto w-screen">
+        <div class="w-full bg-blue-300 md:hidden flex">
+            <div class="h-auto w-3/12"></div>
+            <div class="h-auto w-6/12 flex justify-center"><img src="/" alt="citronic2k24" id="citronic_img" class="w-1/2"></div>
+            <div class="h-auto w-3/12 flex justify-end pr-3"><button class="flex flex-col p-3 hover:bg-blue-500 w-1/2" onclick="side_right()">
+                <span class="bg-white h-1 w-7 my-0.5 rounded"></span>
+                <span class="bg-white h-1 w-7 my-0.5 rounded"></span>
+                <span class="bg-white h-1 w-7 my-0.5 rounded"></span>
+            </button></div>
+        </div>
+        <div class="hidden md:flex">
+            <div class="h-auto w-3/12 bg-blue-300 py-5 flex pl-5">
+                <img src="./picture/CDGI.jpeg" class="h-7 w-7 mx-2" alt="CDGI">
+                <img src="./picture/CDIPS.jpeg" class="h-7 w-7 mx-2" alt="CDGI">
+                <img src="./picture/CDIP.jpeg" class="h-7 w-7 mx-2" alt="CDGI">
+                <img src="./picture/Agarwal.png" class="h-7 w-7 mx-2" alt="CDGI">
+            </div>
+            <div class="flex h-auto w-6/12 justify-evenly bg-red-300 py-5">
+                <button class="text-xs font-normal text-white md:text-xl md:font-semibold">Home</button>
+                <button class="text-xs font-normal text-white md:text-xl md:font-semibold">Gallery</button>
+                <button class="text-xs font-normal text-white md:text-xl md:font-semibold">About Us</button>
+            </div>
+            <div class="h-auto w-3/12 bg-blue-300 py-5"></div>
+        </div>
+    </div>
+    <aside id="right-sidebar" class="fixed top-0 right-0 md:hidden z-10 w-[60%] h-screen bg-red-200 transform-translate translate-x-full duration-300
+        aria-label=" Sidebar">
+        <div class="w-full flex justify-between bg-red-300">
+            <div class="h-auto w-3/12 pl-1 py-5 flex">
+                <img src="./picture/CDGI.jpeg" class="h-5 w-5 mx-1" alt="CDGI">
+                <img src="./picture/CDIPS.jpeg" class="h-5 w-5 mx-1" alt="CDGI">
+                <img src="./picture/CDIP.jpeg" class="h-5 w-5 mx-1" alt="CDGI">
+                <img src="./picture/Agarwal.png" class="h-5 w-5 mx-1" alt="CDGI">
+            </div>
+
+            <button class="p-3" onclick="side_right()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" width="24"
+                    height="24" class="text-white hover:bg-gray-700">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="text-white hover:font-semibold text-xl py-2">Home</div>
+            <div class="text-white hover:font-semibold text-xl py-2">Gallery</div>
+            <div class="text-white hover:font-semibold text-xl py-2">About Us</div>
+        </div>
+    </aside>
+
+    <div class="h-auto w-screen">
+        <div class="flex w-full flex-wrap justify-evenly bg-yellow-500 pt-5 h-auto">
+            <div class="transition-height duration-1000 ease-in-out" onclick="collapse()">
+                <div id="event1"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(1,5,['Band War','Open Mic', 'Beat the street', 'Dance (solo)', 'Dance (Duo)'], 'Entertainment')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Entertainment</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event2"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(2,3,['Cad Championship','Fun Kart (Car)', 'Slow Cycle'], 'Mechanics')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Mechanics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event3"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(3,7,['Snake & Ladder','Master Chef', 'Rampwalk (Solo)', 'Rampwalk (Dual)', 'Treasure Hunt', 'Fun Funda', 'Bollywood Bonanza'], 'Management')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Management</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event4"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(4,5,['Tic-Tak-Toe','Jenga Block Competition', 'Arc Bridge', 'Draw Up', 'Bridge Mania'], 'Civil')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Civil</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event5"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(5,6,['Robo Race','Robo War', 'Line Follower', 'Maze Solver', 'Pick Place', 'Electronic Junk Yard'], 'Robotics')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Robotics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event6"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(6,4,['Youth Got Talent','Pushpa: The Entrepreneur', 'Money Heist', 'Red Light Green Light'], 'Entrepreneurship')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Entrepreneurship</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event7"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(7,6,['Pharma Minds (Model, Poster)','Musical Chair', 'Pass the Wine', 'Music Voice', 'Selfie Booth', 'Lips don\'t Lie'], 'Pharmacy')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Pharmacy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event8"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(8,7,['Code Hunter','Quizophile', 'Beat the Bug', 'Best Googler','Simon Game', 'Web Mastery', 'Jumble Keys'], 'SoftWare')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">SoftWare</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event9"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(9,9,['Rangoli','Handleg Challenge', 'Ball Roll Challenge', 'Soda-Can Roll Challenge', 'Aeroplane Toss', 'Balloon Cup Challenge', 'Office Tennis', 'Plank Challenge', 'Throw De Ke Dekho'], 'On Spot Event')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">On
+                            Spot Event</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event10"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(10,5,['Citro Premier League','Chess', 'Badminton', 'Carrom', 'Tug of War'], 'Sports')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Sports</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event11"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(11,1,['Roadies'], 'Adventurous Event')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Adventurous
+                            Event</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event12"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(12,3,['Reel','DSLR', 'Mobile'], 'Photography')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">Photography</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-height duration-1000 ease-in-out">
+                <div id="event13"
+                    class="m-5 h-64 w-64 bg-white overflow-hidden transition-height duration-300 ease-in-out"
+                    onclick="expand(13,1,['National Quiz'], 'National Quiz')">
+                    <div class="h-full w-full backdrop-blur-sm flex justify-center items-center relative"><span
+                            class=" text-black font-bold">National
+                            Quiz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
